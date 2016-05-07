@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import junit.framework.Test;
-
 import java.text.NumberFormat;
 
 /**
@@ -26,16 +24,13 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        //EditText quantityEditText = (EditText) findViewById(R.id.)
-        //displayPrice(quantity*5);
-        String priceMessage="Free";
-        displayMessage(priceMessage);
+        displayPrice(quantity*5);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(
                 R.id.quantity_text_view);
         quantityTextView.setText("" + number);
@@ -54,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
     public void increment(View view) {
         //EditText quantityEditText = (EditText) findViewById(R.id.)
         quantity++;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -62,8 +57,10 @@ public class MainActivity extends ActionBarActivity {
      */
     public void decrement(View view) {
         //EditText quantityEditText = (EditText) findViewById(R.id.)
-        quantity--;
-        display(quantity);
+        if(quantity > 0) {
+            quantity--;
+        }
+            displayQuantity(quantity);
     }
 
     /**
