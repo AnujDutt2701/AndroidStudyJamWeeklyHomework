@@ -97,12 +97,12 @@ public class MainActivity extends ActionBarActivity {
 
     private String createOrderSummary(int price,String name, boolean whippedCream, boolean chocolate){
         String message = "";
-        message += "Name : "+ name;
-        message += "\nAdd whipped cream? " + whippedCream;
-        message += "\nAdd chocolate? " + chocolate;
-        message += "\nQuantity: " + quantity;
-        message += "\nTotal: $" + price;
-        message += "\nThank you!";
+        message +=  getString(R.string.name) + " : " + name;
+        message += "\n"+ getString(R.string.add_whipped_cream) +" " + whippedCream;
+        message += "\n"+ getString(R.string.add_chocolate) +" " + chocolate;
+        message += "\n"+ getString(R.string.quantity) +": " + quantity;
+        message += "\n"+ getString(R.string.total) +": $" + price;
+        message += "\n"+ getString(R.string.thank_you) +"!";
         return message;
     }
 
